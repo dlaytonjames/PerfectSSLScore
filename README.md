@@ -7,6 +7,8 @@ Perfect here means a A+ rating with all subtests beeing 100%.
 In order to reach 100% in the 'key-exchange' subtests you must have a RSA4096 bit cert/key pair.
 Otherwise you only get 90% in the key-exchange subtests.
 
+Prior work and inspired by: https://blog.bracebin.com/achieving-perfect-ssl-labs-score-with-go
+
 Getting a certificate with lego
 -------------------------------
 
@@ -25,6 +27,10 @@ lego -d manitu.scusi.io -m flw@posteo.de -k rsa4096 renew
 2017/08/10 16:16:50 [INFO] acme: Requesting issuer cert from https://acme-v01.api.letsencrypt.org/acme/issuer-cert
 2017/08/10 16:16:50 [INFO][manitu.scusi.io] Server responded with a certificate.
 ```
+
+NOTE: for the above command to work you need to execute on a server that fulfills the following properties:
+* beeing reachable from the internet on port 80 and 443
+* having the used domainname (<your_domain>) point to the IP of the Server in the DNS
 
 Clone the git repository
 ------------------------
