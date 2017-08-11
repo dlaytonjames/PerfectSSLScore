@@ -2,12 +2,9 @@ package main
 
 import (
 	"net/http"
-	//"github.com/tsuru/config"
 )
 
 func init() {
-	//StaticDir, err := config.GetString("AdminUI:Dir:Static")
-	//checkFatal(err)
 }
 
 type Route struct {
