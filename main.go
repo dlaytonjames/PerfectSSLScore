@@ -42,6 +42,15 @@ func init() {
 
 func main() {
 	flag.Parse()
+	// check required flags
+	if certFile == "" {
+		err := fmt.Errorf("No certificate file set, use -cert flag.")
+		log.Fatal(err)
+	}
+	if keyFile == "" {
+		err := fmt.Errorf("No key file set, use -key flag.")
+		log.Fatal(err)
+	}
 	router := NewRouter()
 	// create a TLS config
 	cfg := &tls.Config{
